@@ -23,7 +23,7 @@
         {% if has_password and not current_user.is_authenticated %}
             <a class="pure-menu-heading" href="https://github.com/Waky/ADRFinder-DLR" rel="noopener"><strong>ADR</strong>Finder - DLR</a>
         {% else %}
-            <a class="pure-menu-heading" href="{{url_for('index')}}"><strong>ADR</strong>Finder</a>
+            <a class="pure-menu-heading" href="{{url_for('index')}}"><strong>ADR</strong>Finder - DLR</a>
         {% endif %}
         {% if new_version_available and not (has_password and not current_user.is_authenticated) %}
         <span id="new-version-text" class="pure-menu-heading"><a href="https://github.com/Waky/ADRFinder-DLR">A new version is available</a></span>
