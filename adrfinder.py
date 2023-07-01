@@ -15,7 +15,7 @@ from adrfinder import store
 def main():
     ssl_mode = False
     host = ''
-    port = os.environ.get('PORT') or 5500
+    port = os.environ.get('PORT') or 5600
     do_cleanup = False
 
     # Must be absolute so that send_from_directory doesnt try to make it relative to backend/
