@@ -28,7 +28,7 @@ class perform_site_check():
         if refresh_time == '' or refresh_time <= int(time.time()):
             payload = "{}"
 
-            connection = http.client.HTTPSConnection("disneyworld.disney.go.com")
+            connection = http.client.HTTPSConnection("disneyland.disney.go.com")
 
             try:
                 connection.request("POST", "/finder/api/v1/authz/public", payload, headers)
@@ -78,7 +78,7 @@ class perform_site_check():
 
     def run(self, uuid):
 
-        base_link = 'https://disneyworld.disney.go.com/dining-reservation/setup-order/table-service/?offerId[]='
+        base_link = 'https://disneyland.disney.go.com/dining-reservation/setup-order/table-service/?offerId[]='
         base_suffix = '&offerOrigin=/dining/'
 
         available_detected = False
@@ -90,11 +90,11 @@ class perform_site_check():
         search_time = urllib.parse.quote(self.datastore.get_val(uuid, 'search_time'))
 
         if '%3A' in search_time:
-            endpoint = "/finder/api/v1/explorer-service/dining-availability-list/false/wdw/80007798;entityType=destination/" + date + "/" + party_size + "/?searchTime=" + search_time
+            endpoint = "/finder/api/v1/explorer-service/dining-availability-list/false/dlr/80008297;entityType=destination/" + date + "/" + party_size + "/?searchTime=" + search_time
         else:
-            endpoint = "/finder/api/v1/explorer-service/dining-availability-list/false/wdw/80007798;entityType=destination/" + date + "/" + party_size + "/?mealPeriod=" + search_time
+            endpoint = "/finder/api/v1/explorer-service/dining-availability-list/false/dlr/80008297;entityType=destination/" + date + "/" + party_size + "/?mealPeriod=" + search_time
 
-        connection = http.client.HTTPSConnection("disneyworld.disney.go.com")
+        connection = http.client.HTTPSConnection("disneyland.disney.go.com")
 
         try:
             connection.request("GET", endpoint, headers=self.headers)
@@ -125,7 +125,7 @@ class perform_site_check():
         if response.status != 200:
             connection.close()
             print(">> Request failed, Non-200 received getting reservation data: {}".format(response.status))
-            print(">> Request url: https://disneyworld.disney.go.com{}".format(endpoint))
+            print(">> Request url: https://disneyland.disney.go.com{}".format(endpoint))
             raise Exception("Request failed, Non-200 received getting reservation data: {}".format(response.status))
 
         data = response.read()

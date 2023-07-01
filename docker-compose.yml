@@ -2,11 +2,11 @@ version: '2'
 services:
     adrfinder:
       image: ghcr.io/chuckmac/adrfinder
-      container_name: adrfinder
-      hostname: adrfinder
+      container_name: adrfinder-dlr
+      hostname: adrfinder-dlr
       volumes:
         - ./datastore:/datastore
       ports:
-        - 5500:5500
+        - 5600:5600
       restart: unless-stopped
 

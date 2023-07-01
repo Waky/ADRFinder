@@ -17,7 +17,7 @@ class Restaurants(object):
         payload = "{}"
         headers = {}
 
-        connection = http.client.HTTPSConnection("disneyworld.disney.go.com")
+        connection = http.client.HTTPSConnection("disneyland.disney.go.com")
 
         try:
             connection.request("POST", "/finder/api/v1/authz/public", payload, headers)
@@ -66,10 +66,10 @@ class Restaurants(object):
 
         yyyymmdd = datetime.datetime.today().strftime('%Y-%m-%d')
 
-        connection = http.client.HTTPSConnection("disneyworld.disney.go.com")
+        connection = http.client.HTTPSConnection("disneyland.disney.go.com")
 
         try:
-            connection.request("GET", "/finder/api/v1/explorer-service/list-ancestor-entities/wdw/80007798;entityType=destination/" + yyyymmdd + "/dining", headers=self.header)
+            connection.request("GET", "/finder/api/v1/explorer-service/list-ancestor-entities/dlr/80008297;entityType=destination/" + yyyymmdd + "/dining", headers=self.header)
         except Exception as e:
             connection.close()
             print(">> Request failed, Unable to get Dining Data: {}".format(e))
@@ -87,7 +87,7 @@ class Restaurants(object):
             connection = http.client.HTTPSConnection(location_data.hostname)
 
             try:
-                connection.request("GET", "/finder/api/v1/explorer-service/list-ancestor-entities/wdw/80007798;entityType=destination/" + yyyymmdd + "/dining", headers=self.header)
+                connection.request("GET", "/finder/api/v1/explorer-service/list-ancestor-entities/dlr/80008297;entityType=destination/" + yyyymmdd + "/dining", headers=self.header)
             except Exception as e:
                 connection.close()
                 print(">> Request failed, Unable to get Dining Data: {}".format(e))
