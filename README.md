@@ -1,11 +1,11 @@
-#  ADRFinder
+#  ADRFinder-DLR
 ![Release](https://img.shields.io/github/v/tag/chuckmac/adrfinder?style=for-the-badge) [![License](https://img.shields.io/github/license/ChuckMac/ADRFinder?style=for-the-badge)](https://github.com/ChuckMac/ADRFinder/blob/master/LICENSE)
 
 ![ADRFinder](https://github.com/chuckmac/adrfinder/actions/workflows/test-only.yml/badge.svg?branch=master)
 
-## Self-Hosted, Open Source, Advanced Dining Reservation Notifications for Disney World
+## Self-Hosted, Open Source, Advanced Dining Reservation Notifications for Disneyland
 
-Get a notification when those those hard to find dining reservations become available at Walt Disney World.
+Get a notification when those those hard to find dining reservations become available at Disneyland.
 
 <img src="https://raw.githubusercontent.com/chuckmac/adrfinder/master/screenshot.png" style="max-width:100%;" alt="Self-hosted reservation finder"  title="Self-hosted reservation finder"  />
 
