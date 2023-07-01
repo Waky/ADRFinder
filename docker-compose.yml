@@ -1,7 +1,7 @@
 version: '2'
 services:
     adrfinder:
-      image: ghcr.io/chuckmac/adrfinder
+      image: adrfinder-dlr:stable
       container_name: adrfinder-dlr
       hostname: adrfinder-dlr
       volumes:
